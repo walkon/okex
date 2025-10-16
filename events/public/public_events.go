@@ -43,8 +43,13 @@ type (
 		Arg   *events.Argument         `json:"arg"`
 		Limit []*publicdata.LimitPrice `json:"data"`
 	}
+	OrderBookArg struct {
+        Channel string `json:"channel"`
+        InstID  string `json:"instId"`
+    }
 	OrderBook struct {
-		Arg    *events.Argument      `json:"arg"`
+		// Arg    *events.Argument      `json:"arg"`
+		Arg    *OrderBookArg      `json:"arg"`
 		InstID string                `json:"instId"`
 		Books  []*market.OrderBookWs `json:"data"`
 		Action string                `json:"action"`
